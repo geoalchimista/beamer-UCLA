@@ -29,18 +29,18 @@
 \newcommand{\itemSquare}[0]{%
     \protect\tikz[baseline=\baseline]{
         \protect \node[itemSquare] at (0, 0.5\itemLocation) {};}}
-        
+
 % Circle item:
 \tikzstyle{itemCircle}=[circle,inner sep=0,minimum size=\circleRadius,fill=fg]
         
 \newcommand{\itemCircle}[0]{%
     \protect\tikz[baseline=\baseline]{
         \protect \node[itemCircle] at (0, 0.5\itemLocation) {};}}
-        
+
 % Triangle item:
 \tikzstyle{itemTriangle}=[regular polygon, regular polygon sides=3, rotate=-90,
                           inner sep=0,minimum size=\triangleSize,fill=fg]
-                          
+
 \newcommand{\itemTriangle}[0]{%
     \protect\tikz[baseline=\baseline]{
         \protect \node[itemTriangle] at (0, 0.5\itemLocation) {};}}
@@ -77,7 +77,7 @@
 \setbeamertemplate{background}{
 \begin{tikzpicture}
 	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	
+
 	% Just use a white background:
 	\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
 \end{tikzpicture}

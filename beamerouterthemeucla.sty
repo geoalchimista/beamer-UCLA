@@ -11,7 +11,9 @@
 
 
 \newlength{\headlineWidth}
-\setlength{\headlineWidth}{13mm}
+% \setlength{\headlineWidth}{13mm}
+\setlength{\headlineWidth}{10mm}  % customized by Wu Sun, 21 Mar 2017
+% do not use two line titles
 
 
 %-------------------------------------------------------------------------------------------------
@@ -25,15 +27,21 @@
 	% Blue background:
 	\useasboundingbox[fill=uclaBlueDark] (0,0) rectangle (\paperwidth,\headlineWidth);
 
-	% Gold bar:
-	\fill[uclaGoldDark] (0,0) rectangle (\paperwidth,0.5\footlineWidth);
+	% % Gold bar:
+	% \fill[uclaGoldDark] (0,0) rectangle (\paperwidth,0.5\footlineWidth);
+
+	% Gold bar (customized by Wu Sun, 21 Mar 2017):
+	\fill[uclaGoldDark] (0,0) rectangle (\paperwidth,1mm);
 	
 	% Title:
 	\node[align=left,
 		  text width=\textwidth] at (0.5\paperwidth, 0.5\headlineWidth+0.25\footlineWidth)
 		{\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\baselineskip=15pt\insertframetitle\\
 		 \usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par};
-		
+
+	% section head
+	\node[align=right, text width=0.25\textwidth, anchor=west] at (0.75\paperwidth, 0.5\headlineWidth+0.25\footlineWidth) {\usebeamercolor[fg]{frametitle}\normalfont\tiny\baselineskip=8pt\insertsectionhead\par};
+
 	\end{tikzpicture}
 \end{beamercolorbox}
 }
@@ -57,9 +65,9 @@
 	% Bars:
 	%\useasboundingbox[fill=uclaBlueDark] (0,0) rectangle (\paperwidth,\footlineWidth);
 	%\fill[uclaGoldDark] (0,0.5\footlineWidth) rectangle (\paperwidth,\footlineWidth);
-	
+
 	\useasboundingbox[fill=uclaBlueDark] (0,0) rectangle (\paperwidth,0.5\footlineWidth);
-	
+
 	% Slide number:
 	\ifslidenumber
 		\fill[uclaBlueDark] (\paperwidth,0.0) -- 
